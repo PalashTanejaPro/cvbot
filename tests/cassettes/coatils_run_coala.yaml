@@ -1,7 +1,7 @@
 interactions:
 - request:
-    body: '{"sections": {"corobo": {"files": "**.gyp", "bears": {"SpaceConsistencyBear":
-      {"use_spaces": "yes"}}}}, "mode": "coala", "language": "python", "file_data":
+    body: '{"sections": {"cvbot": {"files": "**.gyp", "bears": {"SpaceConsistencyBear":
+      {"use_spaces": "yes"}}}}, "mode": "cloudcv", "language": "python", "file_data":
       "import this\n"}'
     headers:
       Accept: ['*/*']
@@ -11,10 +11,10 @@ interactions:
       Content-Type: [application/json]
       User-Agent: [python-requests/2.18.1]
     method: POST
-    uri: https://api.gitmate.io/coala_online/
+    uri: https://api.gitmate.io/cloudcv_online/
   response:
-    body: {string: '{"response": {"results": {"cli": [], "corobo": []}}, "coafile":
-        "[cli]\njson = True\n[corobo]\nfiles = **.gyp\nbears = SpaceConsistencyBear\nuse_spaces
+    body: {string: '{"response": {"results": {"cli": [], "cvbot": []}}, "coafile":
+        "[cli]\njson = True\n[cvbot]\nfiles = **.gyp\nbears = SpaceConsistencyBear\nuse_spaces
         = yes\n"}'}
     headers:
       Allow: ['OPTIONS, POST']
@@ -27,8 +27,8 @@ interactions:
       X-Frame-Options: [SAMEORIGIN]
     status: {code: 200, message: OK}
 - request:
-    body: '{"sections": {"corobo": {"files": "**.gyp", "bears": {"PyUnusedCodeBear":
-      {"remove_unused_imports": "yes"}, "PycodestyleBear": {}}}}, "mode": "coala",
+    body: '{"sections": {"cvbot": {"files": "**.gyp", "bears": {"PyUnusedCodeBear":
+      {"remove_unused_imports": "yes"}, "PycodestyleBear": {}}}}, "mode": "cloudcv",
       "language": "python", "file_data": "import os\nimport this\na=1\n"}'
     headers:
       Accept: ['*/*']
@@ -38,9 +38,9 @@ interactions:
       Content-Type: [application/json]
       User-Agent: [python-requests/2.18.1]
     method: POST
-    uri: https://api.gitmate.io/coala_online/
+    uri: https://api.gitmate.io/cloudcv_online/
   response:
-    body: {string: '{"response": {"results": {"cli": [], "corobo": [{"additional_info":
+    body: {string: '{"response": {"results": {"cli": [], "cvbot": [{"additional_info":
         "", "affected_code": [{"end": {"column": null, "file": "/usr/src/app/tmp/tmpxg4ykt5m/tmpwgv0naeq.gyp",
         "line": 1}, "file": "/usr/src/app/tmp/tmpxg4ykt5m/tmpwgv0naeq.gyp", "start":
         {"column": null, "file": "/usr/src/app/tmp/tmpxg4ykt5m/tmpwgv0naeq.gyp", "line":
@@ -55,7 +55,7 @@ interactions:
         "confidence": 100, "debug_msg": "", "diffs": null, "id": 230845698266137851115230071385570299039,
         "message": "E225 missing whitespace around operator", "message_arguments":
         {}, "message_base": "E225 missing whitespace around operator", "origin": "PycodestyleBear
-        (E225)", "severity": 1}]}}, "coafile": "[cli]\njson = True\n[corobo]\nfiles
+        (E225)", "severity": 1}]}}, "coafile": "[cli]\njson = True\n[cvbot]\nfiles
         = **.gyp\nbears = PyUnusedCodeBear,PycodestyleBear\nremove_unused_imports
         = yes\n"}'}
     headers:
@@ -69,8 +69,8 @@ interactions:
       X-Frame-Options: [SAMEORIGIN]
     status: {code: 200, message: OK}
 - request:
-    body: '{"sections": {"corobo": {"files": "**.gyp", "bears": {"b": {}}}}, "mode":
-      "coala", "language": "a", "file_data": "c\n"}'
+    body: '{"sections": {"cvbot": {"files": "**.gyp", "bears": {"b": {}}}}, "mode":
+      "cloudcv", "language": "a", "file_data": "c\n"}'
     headers:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
@@ -79,7 +79,7 @@ interactions:
       Content-Type: [application/json]
       User-Agent: [python-requests/2.18.1]
     method: POST
-    uri: https://api.gitmate.io/coala_online/
+    uri: https://api.gitmate.io/cloudcv_online/
   response:
     body: {string: <h1>Server Error (500)</h1>}
     headers:

@@ -32,7 +32,7 @@ class Pitchfork(BotPlugin):
                     ```
                 """).substitute(user=user,
                                 place=('[offtopic]('
-                                       'https://gitter.im/coala/coala/offtopic)'
+                                       'https://gitter.im/cloudcv/cloudcv/offtopic)'
                                        if place == 'offtopic' else place))
                 ))
         else:

@@ -52,9 +52,9 @@ BOT_EXTRA_PLUGIN_DIR = COBOT_ROOT
 BOT_LOG_FILE = os.path.join(COBOT_ROOT, 'errbot.log')
 BOT_LOG_LEVEL = logging.DEBUG
 
-BOT_PREFIX = os.environ.get('COBOT_PREFIX', 'corobo ')
+BOT_PREFIX = os.environ.get('COBOT_PREFIX', 'cvbot ')
 
-# Also listen to cobot, if the bot being ran is corobo
+# Also listen to cobot, if the bot being ran is cvbot
 if not os.environ.get('COBOT_PREFIX'):
     BOT_ALT_PREFIXES = ('cobot ', )
 
@@ -67,29 +67,29 @@ if BACKEND == 'Text':
     BOT_ADMINS = ('@localhost', )
 
 IGNORE_USERNAMES = os.environ.get("IGNORE_USERNAMES",
-                                  'co-robo coala-bot').split()
+                                  'co-robo cloudcv-bot').split()
 
 DIVERT_TO_PRIVATE = ('help', )
 
 ROOMS_TO_JOIN = (
-    'coala/coala',
-    'coala/coala/offtopic',
-    'coala/cobot-test',
-    'coala/corobo',
-    'coala/devops',
-    'coala/community',
-    'coala/coala/gsoc',
-    'coala/coala/maintainers',
-    'coala/coala-bears',
-    'coala/bearship',
-    'coala/gci',
-    'coala/cobot'
+    'cloudcv/cloudcv',
+    'cloudcv/cloudcv/offtopic',
+    'cloudcv/cobot-test',
+    'cloudcv/cvbot',
+    'cloudcv/devops',
+    'cloudcv/community',
+    'cloudcv/cloudcv/gsoc',
+    'cloudcv/cloudcv/maintainers',
+    'cloudcv/cloudcv-bears',
+    'cloudcv/bearship',
+    'cloudcv/gci',
+    'cloudcv/cobot'
 )
 
 CHATROOM_PRESENCE = os.environ.get('ROOMS', '').split() or ROOMS_TO_JOIN
 
 ACCESS_CONTROLS = {'render test': {
-    'allowrooms': ('coala/cobot-test', 'coala/corobo',)},
+    'allowrooms': ('cloudcv/cobot-test', 'cloudcv/cvbot',)},
     'LabHub:*': {'allowprivate': False}}
 
 AUTOINSTALL_DEPS = True

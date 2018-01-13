@@ -1,9 +1,9 @@
 #%RAML 1.0
 
-title: coala webservices
+title: cloudcv webservices
 version: v1
 protocols: [ HTTP, HTTPS ]
-baseUri: http://webservices.coala.io
+baseUri: http://webservices.cloudcv.io
 mediaType: application/json
 
 types:
@@ -64,7 +64,7 @@ types:
         200:
           body:
             application/json:
-              type: BearInfo[]  # NOTE: not merged https://gitlab.com/coala/landing/merge_requests/39
+              type: BearInfo[]  # NOTE: not merged https://gitlab.com/cloudcv/landing/merge_requests/39
 
 /search:
   /bears:

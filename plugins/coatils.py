@@ -13,7 +13,7 @@ client = Client('webservices.raml')
 
 class Coatils(BotPlugin):
     """
-    Various coala related utilities, exposing the REST API, etc.
+    Various cloudcv related utilities, exposing the REST API, etc.
     """
 
     def __init__(self, bot, name=None):
@@ -93,12 +93,12 @@ class Coatils(BotPlugin):
                 yield 'No bear exists for {} language'.format(entity)
         # lang stats
         elif stat_type == 'lang' and entity == '':
-            yield 'coala supports {} languages'.format(
+            yield 'cloudcv supports {} languages'.format(
                 len(Coatils.all_langs())
             )
         # stats
         elif stat_type == '' and entity == '':
-            yield ('coala has {} bears across {} languages'
+            yield ('cloudcv has {} bears across {} languages'
                    ''.format(Coatils.total_bears(),
                              len(Coatils.all_langs())))
 
@@ -170,7 +170,7 @@ class Coatils(BotPlugin):
                                 '```\n<code>+\n```')
     def run(self, msg, match):
         """
-        Run coala over the given code.
+        Run cloudcv over the given code.
 
         Example: `run Bear1 setting1=something setting2=something Bear2\ncode`
         """
@@ -179,24 +179,24 @@ class Coatils(BotPlugin):
         code = match.group(3) + ('\n' if not match.group(3).endswith('\n')
                                  else '')
 
-        yield 'coala analysis in progress...'
+        yield 'cloudcv analysis in progress...'
 
         data = {
             "sections": {
-                "corobo": {
+                "cvbot": {
                     "files": "**.gyp",
                     "bears": dict(bear_settings),
                 }
             },
-            "mode": "coala",
+            "mode": "cloudcv",
             "language": lang,
             "file_data": code,
         }
 
         # Ignore InvalidLinkBear, this only accepts post requests
-        rq = requests.post('https://api.gitmate.io/coala_online/', json=data)
+        rq = requests.post('https://api.gitmate.io/cloudcv_online/', json=data)
         try:
-            results = rq.json()['response']['results']['corobo']
+            results = rq.json()['response']['results']['cvbot']
         except json.JSONDecodeError:
             went_wrong = '\n - '.join([
                 'Is the bear name correct? Note that bear names are '

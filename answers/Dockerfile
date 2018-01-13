@@ -5,8 +5,8 @@ ENV ROOT=/app
 ADD requirements.txt $ROOT/requirements.txt
 
 RUN apt-get -y update && apt-get install -y gcc gfortran git \
-    && git clone https://github.com/coala/coala /app/coala \
-    && git clone https://github.com/coala/documentation /app/documentation \
+    && git clone https://github.com/cloudcv/cloudcv /app/cloudcv \
+    && git clone https://github.com/cloudcv/documentation /app/documentation \
     && pip install -U pip -r $ROOT/requirements.txt \
     && apt-get remove -y gcc gfortran git \
     && python -m spacy download en_core_web_md

@@ -7,7 +7,7 @@ interactions:
       Connection: [keep-alive]
       User-Agent: [python-requests/2.17.3]
     method: GET
-    uri: http://webservices.coala.io/contrib/
+    uri: http://webservices.cloudcv.io/contrib/
   response:
     body: {string: '<html>
 
@@ -29,10 +29,10 @@ interactions:
       Connection: [keep-alive]
       Content-Type: [text/html]
       Date: ['Tue, 20 Jun 2017 10:58:25 GMT']
-      Location: ['https://webservices.coala.io/contrib/']
+      Location: ['https://webservices.cloudcv.io/contrib/']
       Server: [cloudflare-nginx]
       Set-Cookie: ['__cfduid=d8bf876b254c56ba0f74e24a581b543a91497956305; expires=Wed,
-          20-Jun-18 10:58:25 GMT; path=/; domain=.coala.io; HttpOnly']
+          20-Jun-18 10:58:25 GMT; path=/; domain=.cloudcv.io; HttpOnly']
       X-Content-Type-Options: [nosniff]
     status: {code: 301, message: Moved Permanently}
 - request:
@@ -44,7 +44,7 @@ interactions:
       Cookie: [__cfduid=d8bf876b254c56ba0f74e24a581b543a91497956305]
       User-Agent: [python-requests/2.17.3]
     method: GET
-    uri: https://webservices.coala.io/contrib/
+    uri: https://webservices.cloudcv.io/contrib/
   response:
     body:
       string: !!binary |
@@ -268,7 +268,7 @@ interactions:
       Connection: [keep-alive]
       User-Agent: [python-requests/2.17.3]
     method: GET
-    uri: http://webservices.coala.io/contrib/
+    uri: http://webservices.cloudcv.io/contrib/
   response:
     body: {string: '<html>
 
@@ -290,10 +290,10 @@ interactions:
       Connection: [keep-alive]
       Content-Type: [text/html]
       Date: ['Tue, 20 Jun 2017 10:58:28 GMT']
-      Location: ['https://webservices.coala.io/contrib/']
+      Location: ['https://webservices.cloudcv.io/contrib/']
       Server: [cloudflare-nginx]
       Set-Cookie: ['__cfduid=d9cb15e945f7331e8366ab9780a84eaa01497956308; expires=Wed,
-          20-Jun-18 10:58:28 GMT; path=/; domain=.coala.io; HttpOnly']
+          20-Jun-18 10:58:28 GMT; path=/; domain=.cloudcv.io; HttpOnly']
       X-Content-Type-Options: [nosniff]
     status: {code: 301, message: Moved Permanently}
 - request:
@@ -305,7 +305,7 @@ interactions:
       Cookie: [__cfduid=d9cb15e945f7331e8366ab9780a84eaa01497956308]
       User-Agent: [python-requests/2.17.3]
     method: GET
-    uri: https://webservices.coala.io/contrib/
+    uri: https://webservices.cloudcv.io/contrib/
   response:
     body:
       string: !!binary |

@@ -12,9 +12,9 @@ class Filters(BotPlugin):
     def filters(self, msg, cmd, args, dry_run):
         # Blacklisting commands from specified rooms
         CMDS_TO_BLACKLIST = {
-            'coala/coala': ['echo'],
-            'coala/coala-bears': ['echo'],
-            'coala/corobo': ['echo']
+            'cloudcv/cloudcv': ['echo'],
+            'cloudcv/cloudcv-bears': ['echo'],
+            'cloudcv/cvbot': ['echo']
         }
 
         for room, commands in CMDS_TO_BLACKLIST.items():

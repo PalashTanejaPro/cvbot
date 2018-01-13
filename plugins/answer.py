@@ -14,12 +14,12 @@ class Answer(BotPlugin):
 
     @staticmethod
     def construct_link(text):
-        if 'coala/docs/' in text:
-            text = text.split('coala/docs/')[-1]
-            return 'https://api.coala.io/en/latest/' + text
+        if 'cloudcv/docs/' in text:
+            text = text.split('cloudcv/docs/')[-1]
+            return 'https://api.cloudcv.io/en/latest/' + text
         elif 'documentation/' in text:
             text = text.split('documentation/')[-1]
-            return 'https://docs.coala.io/en/latest/' + text
+            return 'https://docs.cloudcv.io/en/latest/' + text
 
     @botcmd
     def answer(self, msg, arg):

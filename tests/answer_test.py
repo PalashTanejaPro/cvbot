@@ -16,7 +16,7 @@ class TestAnswer(unittest.TestCase):
         testbot = TestBot(extra_plugin_dir='plugins', loglevel=logging.ERROR)
         testbot.start()
         testbot.assertCommand('!answer something', 'Dunno')
-        testbot.push_message('!answer getting started with coala')
+        testbot.push_message('!answer getting started with cloudcv')
         self.assertIn('Please checkout the following links', testbot.pop_message())
         testbot.push_message('!answer shell autocompletion')
         self.assertIn('Please checkout the following links', testbot.pop_message())

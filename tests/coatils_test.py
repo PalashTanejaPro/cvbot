@@ -38,7 +38,7 @@ class TestCoatils(unittest.TestCase):
     @vcr.use_cassette('tests/cassettes/coatils_lang_stats.yaml')
     def test_lang_stats(self):
         self.testbot.assertCommand('!lang  stats',
-                                   'coala supports 63 languages')
+                                   'cloudcv supports 63 languages')
 
     @vcr.use_cassette('tests/cassettes/coatils_bear_stats.yaml')
     def test_bear_stats(self):
@@ -63,21 +63,21 @@ class TestCoatils(unittest.TestCase):
     @vcr.use_cassette('tests/cassettes/coatils_stats.yaml')
     def test_stats(self):
         self.testbot.assertCommand('!stats',
-                                   'coala has 102 bears across 63 languages')
+                                   'cloudcv has 102 bears across 63 languages')
 
-    @vcr.use_cassette('tests/cassettes/coatils_run_coala.yaml')
-    def test_run_coala(self):
+    @vcr.use_cassette('tests/cassettes/coatils_run_cloudcv.yaml')
+    def test_run_cloudcv(self):
         # no results
         self.testbot.push_message('!run python SpaceConsistencyBear use_spaces=yes\n```\nimport this\n\n```')
         self.assertEqual(self.testbot.pop_message(),
-                         'coala analysis in progress...')
+                         'cloudcv analysis in progress...')
         self.assertEqual(self.testbot.pop_message(),
                          'Your code is flawless :tada:')
         # results and diffs
         self.testbot.push_message('!run python PyUnusedCodeBear remove_unused_imports=yes '
                                   'PycodestyleBear\n```\nimport os\nimport this\na=1\n```')
         self.assertEqual(self.testbot.pop_message(),
-                         'coala analysis in progress...')
+                         'cloudcv analysis in progress...')
         msg = self.testbot.pop_message()
         self.assertIn('Here is what I think is wrong:', msg)
         self.assertIn('This file contains unused source code',
@@ -89,7 +89,7 @@ class TestCoatils(unittest.TestCase):
         # error
         self.testbot.push_message('!run a b\n```\nc\n```')
         self.assertEqual(self.testbot.pop_message(),
-                         'coala analysis in progress...')
+                         'cloudcv analysis in progress...')
         self.assertIn('Something went wrong, things to check for',
                       self.testbot.pop_message())
 

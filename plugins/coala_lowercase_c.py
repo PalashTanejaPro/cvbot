@@ -4,19 +4,19 @@ import re
 from errbot import BotPlugin
 
 
-class Coala_lowercase_c(BotPlugin):
-    """coala is always written with a lower case c."""  # Ignore QuotesBear
+class cloudcv_lowercase_c(BotPlugin):
+    """cloudcv is always written with a lower case c."""  # Ignore QuotesBear
 
     def callback_message(self, msg):
         emots = [':(', ':angry:', ':confounded:',
                  ':disappointed:', ':triumph:']
 
-        match_coala = re.search(r'(?:^|[^\w])C+[Oo]+[Aa]+[Ll]+[Aa]+(?:$|[^\w])',
+        match_cloudcv = re.search(r'(?:^|[^\w])C+[Oo]+[Aa]+[Ll]+[Aa]+(?:$|[^\w])',
                                 msg.body)
-        if match_coala:
+        if match_cloudcv:
             self.send(
                 msg.frm,
-                '@{}, coala is always written with a lower case c. {}'.format(
+                '@{}, cloudcv is always written with a lower case c. {}'.format(
                     msg.frm.nick, emots[random.randint(0, len(emots) - 1)]
                 )
             )

@@ -1,11 +1,11 @@
 set -e -x
 
-docker build -t meetmangukiya/corobo .
+docker build -t meetmangukiya/cvbot .
 .ci/semaphore.answers.sh
 
 docker images
 
-docker run --user root meetmangukiya/corobo /bin/sh -c "
+docker run --user root meetmangukiya/cvbot /bin/sh -c "
     set -e -x
     pip install -r test-requirements.txt
     find -name \"**.pyc\" -delete
@@ -13,5 +13,5 @@ docker run --user root meetmangukiya/corobo /bin/sh -c "
 "
 
 if [[ $BRANCH_NAME == "master" ]]
-then echo "pushing..." && docker push meetmangukiya/corobo && docker push meetmangukiya/corobo-answers
+then echo "pushing..." && docker push meetmangukiya/cvbot && docker push meetmangukiya/cvbot-answers
 fi

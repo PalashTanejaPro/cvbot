@@ -7,7 +7,7 @@ interactions:
       Connection: [keep-alive]
       User-Agent: [python-requests/2.17.3]
     method: GET
-    uri: http://webservices.coala.io/list/bears
+    uri: http://webservices.cloudcv.io/list/bears
   response:
     body: {string: '<html>
 
@@ -29,10 +29,10 @@ interactions:
       Connection: [keep-alive]
       Content-Type: [text/html]
       Date: ['Tue, 20 Jun 2017 11:02:46 GMT']
-      Location: ['https://webservices.coala.io/list/bears']
+      Location: ['https://webservices.cloudcv.io/list/bears']
       Server: [cloudflare-nginx]
       Set-Cookie: ['__cfduid=de1f8f54dbde1d86c840518d4471e8a541497956566; expires=Wed,
-          20-Jun-18 11:02:46 GMT; path=/; domain=.coala.io; HttpOnly']
+          20-Jun-18 11:02:46 GMT; path=/; domain=.cloudcv.io; HttpOnly']
       X-Content-Type-Options: [nosniff]
     status: {code: 301, message: Moved Permanently}
 - request:
@@ -44,7 +44,7 @@ interactions:
       Cookie: [__cfduid=de1f8f54dbde1d86c840518d4471e8a541497956566]
       User-Agent: [python-requests/2.17.3]
     method: GET
-    uri: https://webservices.coala.io/list/bears
+    uri: https://webservices.cloudcv.io/list/bears
   response:
     body:
       string: !!binary |

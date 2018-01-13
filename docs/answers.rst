@@ -4,7 +4,7 @@ Answers
 Extraction
 ----------
 
-``coala`` documentation is in ``rST`` files. ``docutils`` is used to parse rst
+``cloudcv`` documentation is in ``rST`` files. ``docutils`` is used to parse rst
 files.
 
 ``answers.extraction.Extractor`` is the ``NodeVisitor`` that visits all the

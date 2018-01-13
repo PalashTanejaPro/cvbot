@@ -1,12 +1,12 @@
-# corobo
+# cvbot
 
-[![Codecov branch](https://img.shields.io/codecov/c/github/coala/corobo/master.svg)](https://codecov.io/gh/coala/corobo)
-[![Semaphore branch](https://semaphoreci.com/api/v1/coala/corobo/branches/master/badge.svg)](https://semaphoreci.com/coala/corobo)
-[![Gitter Room](https://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg)](https://gitter.im/coala/corobo)
+[![Codecov branch](https://img.shields.io/codecov/c/github/cloudcv/cvbot/master.svg)](https://codecov.io/gh/cloudcv/cvbot)
+[![Semaphore branch](https://semaphoreci.com/api/v1/cloudcv/cvbot/branches/master/badge.svg)](https://semaphoreci.com/cloudcv/cvbot)
+[![Gitter Room](https://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg)](https://gitter.im/cloudcv/cvbot)
 
 ## About
 
-`corobo` is a Python based chatbot that could be connected to many messaging
+`cvbot` is a Python based chatbot that could be connected to many messaging
 platforms including Slack, HipChat, Telegram, IRC, XMPP, Tox, Campfire, Gitter,
 Skype. Check all the backends available
 [here](http://errbot.io/en/latest/features.html#multiple-server-backends)
@@ -25,8 +25,8 @@ is ran.
 
 ## Features
 
-Read more about what `corobo` could do for you
-[here](https://github.com/coala/corobo/blob/master/docs/corobo.rst).
+Read more about what `cvbot` could do for you
+[here](https://github.com/cloudcv/cvbot/blob/master/docs/cvbot.rst).
 
 ## Environment Variables
 
@@ -34,7 +34,7 @@ Read more about what `corobo` could do for you
 2. `COBOT_PREFIX` - prefix to use for issuing bot commands.
 3. `BOT_ADMINS` - Admins of the errbot instance.
 4. `ROOMS` - Space separated list of rooms to join on startup. e.g.
-   `ROOMS="coala/coala coala/coala/corobo"`
+   `ROOMS="cloudcv/cloudcv cloudcv/cloudcv/cvbot"`
 5. `BACKEND` - Backend to use.
    Default is Text, or Gitter when `BOT_TOKEN` is set.
 5. `BOT_TOKEN` - Token used to connect to the backends - Mandatory for
@@ -65,7 +65,7 @@ Read more about what `corobo` could do for you
 
 ## Setup with docker
 
-1. Grab the image `docker pull meetmangukiya/corobo`
+1. Grab the image `docker pull meetmangukiya/cvbot`
 2. Run the image :D:
     ```
     docker run --rm -e COBOT_TOKEN="this-is-chatbot-token" \
@@ -76,10 +76,10 @@ Read more about what `corobo` could do for you
                     -e GL_TOKEN="this-is-the-bots-gitlab-token" \
                     -e GH_ORG_NAME="gitmate" \
                     -e GL_ORG_NAME="gitmate" \
-                    meetmangukiya/corobo
+                    meetmangukiya/cvbot
     ```
 
 ## Under Brewing
 
-There are a few plugins that may be coala specific. But we are working on making
+There are a few plugins that may be cloudcv specific. But we are working on making
 it more configurable and adaptable for other orgs.

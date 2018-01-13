@@ -37,9 +37,9 @@ class TestLabHub(unittest.TestCase):
 
     def test_invite_cmd(self):
         teams = {
-            'coala maintainers': self.mock_team,
-            'coala newcomers': self.mock_team,
-            'coala developers': self.mock_team
+            'cloudcv maintainers': self.mock_team,
+            'cloudcv newcomers': self.mock_team,
+            'cloudcv developers': self.mock_team
         }
 
         labhub, testbot = plugin_testbot(plugins.labhub.LabHub, logging.ERROR)
@@ -61,7 +61,7 @@ class TestLabHub(unittest.TestCase):
 
     def test_hello_world_callback(self):
         teams = {
-            'coala newcomers': self.mock_team,
+            'cloudcv newcomers': self.mock_team,
         }
 
         testbot = TestBot(extra_plugin_dir='plugins', loglevel=logging.ERROR)
@@ -116,7 +116,7 @@ class TestLabHub(unittest.TestCase):
             'another title', 'and body\nOpened by @None at [text]()'
         )
 
-        testbot_public.assertCommand('!new issue coala title', 'repository that does not exist')
+        testbot_public.assertCommand('!new issue cloudcv title', 'repository that does not exist')
 
     def test_unassign_cmd(self):
         plugins.labhub.GitHub = create_autospec(IGitt.GitHub.GitHub.GitHub)
@@ -132,16 +132,16 @@ class TestLabHub(unittest.TestCase):
         mock_iss.assignees = (None, )
         mock_iss.unassign = MagicMock()
 
-        testbot.assertCommand('!unassign https://github.com/coala/name/issues/23',
+        testbot.assertCommand('!unassign https://github.com/cloudcv/name/issues/23',
                               'you are unassigned now', timeout=10000)
         self.mock_repo.get_issue.assert_called_with(23)
         mock_iss.unassign.assert_called_once_with(None)
 
         mock_iss.assignees = ('meetmangukiya', )
-        testbot.assertCommand('!unassign https://github.com/coala/name/issues/23',
+        testbot.assertCommand('!unassign https://github.com/cloudcv/name/issues/23',
                            'not an assignee on the issue')
 
-        testbot.assertCommand('!unassign https://github.com/coala/s/issues/52',
+        testbot.assertCommand('!unassign https://github.com/cloudcv/s/issues/52',
                               'Repository doesn\'t exist.')
 
 
@@ -164,16 +164,16 @@ class TestLabHub(unittest.TestCase):
         mock_dev_team.is_member.return_value = False
         mock_maint_team.is_member.return_value = False
 
-        labhub.TEAMS = {'coala newcomers': self.mock_team,
-                        'coala developers': mock_dev_team,
-                        'coala maintainers': mock_maint_team}
+        labhub.TEAMS = {'cloudcv newcomers': self.mock_team,
+                        'cloudcv developers': mock_dev_team,
+                        'cloudcv maintainers': mock_maint_team}
 
         cmd = '!assign https://github.com/{}/{}/issues/{}'
         # no assignee, not newcomer
         mock_issue.assignees = tuple()
         self.mock_team.is_member.return_value = False
 
-        testbot.assertCommand(cmd.format('coala', 'a', '23'),
+        testbot.assertCommand(cmd.format('cloudcv', 'a', '23'),
                               'You\'ve been assigned to the issue')
 
         # no assignee, newcomer, difficulty/low
@@ -182,47 +182,47 @@ class TestLabHub(unittest.TestCase):
         mock_issue.assignees = tuple()
         self.mock_team.is_member.return_value = True
 
-        testbot.assertCommand(cmd.format('coala', 'a', '23'),
+        testbot.assertCommand(cmd.format('cloudcv', 'a', '23'),
                               'You\'ve been assigned to the issue')
 
         # no assignee, newcomer, no labels
         self.mock_team.is_member.return_value = True
         mock_issue.labels = tuple()
         mock_issue.assignees = tuple()
-        testbot.assertCommand(cmd.format('coala', 'a', '23'),
+        testbot.assertCommand(cmd.format('cloudcv', 'a', '23'),
                               'not eligible to be assigned to this issue')
         testbot.pop_message()
 
         # no assignee, newcomer, difficulty medium
         mock_issue.labels = ('difficulty/medium', )
-        testbot.assertCommand(cmd.format('coala', 'a', '23'),
+        testbot.assertCommand(cmd.format('cloudcv', 'a', '23'),
                               'not eligible to be assigned to this issue')
         testbot.pop_message()
 
         # no assignee, newcomer, difficulty medium
-        labhub.GH_ORG_NAME = 'not-coala'
-        testbot.assertCommand(cmd.format('coala', 'a', '23'),
+        labhub.GH_ORG_NAME = 'not-cloudcv'
+        testbot.assertCommand(cmd.format('cloudcv', 'a', '23'),
                               'assigned')
-        labhub.GH_ORG_NAME = 'coala'
+        labhub.GH_ORG_NAME = 'cloudcv'
 
         # newcomer, developer, difficulty/medium
         mock_dev_team.is_member.return_value = True
         mock_maint_team.is_member.return_value = False
-        testbot.assertCommand(cmd.format('coala', 'a', '23'),
+        testbot.assertCommand(cmd.format('cloudcv', 'a', '23'),
                               'assigned')
 
         # has assignee
         mock_issue.assignees = ('somebody', )
-        testbot.assertCommand(cmd.format('coala', 'a', '23'),
+        testbot.assertCommand(cmd.format('cloudcv', 'a', '23'),
                               'already assigned to someone')
 
         # has assignee same as user
         mock_issue.assignees = (None, )
-        testbot.assertCommand(cmd.format('coala', 'a', '23'),
+        testbot.assertCommand(cmd.format('cloudcv', 'a', '23'),
                               'already assigned to you')
 
         # non-existent repository
-        testbot.assertCommand(cmd.format('coala', 'c', '23'),
+        testbot.assertCommand(cmd.format('cloudcv', 'c', '23'),
                               'Repository doesn\'t exist.')
 
         # unknown org
@@ -251,45 +251,45 @@ class TestLabHub(unittest.TestCase):
         testbot.assertCommand('!mark wip https://gitlab.com/a/b/merge_requests/2',
                               'Repository doesn\'t exist.')
 
-        mock_github_mr.web_url = 'https://github.com/coala/a/pull/23'
-        mock_gitlab_mr.web_url = 'https://gitlab.com/coala/a/merge_requests/23'
+        mock_github_mr.web_url = 'https://github.com/cloudcv/a/pull/23'
+        mock_gitlab_mr.web_url = 'https://gitlab.com/cloudcv/a/merge_requests/23'
 
         # mark wip
         mock_github_mr.labels = ['process/pending review']
         mock_gitlab_mr.labels = ['process/pending review']
-        testbot.assertCommand(cmd_github.format('wip', 'coala', 'a', '23'),
+        testbot.assertCommand(cmd_github.format('wip', 'cloudcv', 'a', '23'),
                               'marked work in progress')
-        testbot.assertCommand(cmd_github.format('wip', 'coala', 'a', '23'),
+        testbot.assertCommand(cmd_github.format('wip', 'cloudcv', 'a', '23'),
                               '@johndoe, please check your pull request')
-        testbot.assertCommand(cmd_github.format('wip', 'coala', 'a', '23'),
-                              'https://github.com/coala/a/pull/23')
+        testbot.assertCommand(cmd_github.format('wip', 'cloudcv', 'a', '23'),
+                              'https://github.com/cloudcv/a/pull/23')
 
         self.mock_repo.get_mr.return_value = mock_gitlab_mr
 
-        testbot.assertCommand(cmd_gitlab.format('wip', 'coala', 'a', '23'),
+        testbot.assertCommand(cmd_gitlab.format('wip', 'cloudcv', 'a', '23'),
                               '@johndoe, please check your pull request')
-        testbot.assertCommand(cmd_gitlab.format('wip', 'coala', 'a', '23'),
-                              'https://gitlab.com/coala/a/merge_requests/23')
+        testbot.assertCommand(cmd_gitlab.format('wip', 'cloudcv', 'a', '23'),
+                              'https://gitlab.com/cloudcv/a/merge_requests/23')
 
         self.mock_repo.get_mr.return_value = mock_github_mr
 
         # mark pending
         mock_github_mr.labels = ['process/wip']
         mock_gitlab_mr.labels = ['process/wip']
-        testbot.assertCommand(cmd_github.format('pending', 'coala', 'a', '23'),
+        testbot.assertCommand(cmd_github.format('pending', 'cloudcv', 'a', '23'),
                               'marked pending review')
-        testbot.assertCommand(cmd_github.format('pending-review', 'coala', 'a', '23'),
+        testbot.assertCommand(cmd_github.format('pending-review', 'cloudcv', 'a', '23'),
                               'marked pending review')
-        testbot.assertCommand(cmd_github.format('pending review', 'coala', 'a', '23'),
+        testbot.assertCommand(cmd_github.format('pending review', 'cloudcv', 'a', '23'),
                               'marked pending review')
 
     def test_alive(self):
         labhub, testbot = plugin_testbot(plugins.labhub.LabHub, logging.ERROR)
         with patch('plugins.labhub.time.sleep') as mock_sleep:
             labhub.gh_repos = {
-                'coala': create_autospec(IGitt.GitHub.GitHub.GitHubRepository),
-                'coala-bears': create_autospec(IGitt.GitHub.GitHub.GitHubRepository),
-                'coala-utils': create_autospec(IGitt.GitHub.GitHub.GitHubRepository)
+                'cloudcv': create_autospec(IGitt.GitHub.GitHub.GitHubRepository),
+                'cloudcv-bears': create_autospec(IGitt.GitHub.GitHub.GitHubRepository),
+                'cloudcv-utils': create_autospec(IGitt.GitHub.GitHub.GitHubRepository)
             }
             # for the branch where program sleeps
             labhub.gh_repos.update({str(i):
@@ -300,19 +300,19 @@ class TestLabHub(unittest.TestCase):
             }
             labhub.activate()
 
-            labhub.gh_repos['coala'].search_mrs.return_value = [1, 2]
-            labhub.gh_repos['coala-bears'].search_mrs.return_value = []
-            labhub.gh_repos['coala-utils'].search_mrs.return_value = []
+            labhub.gh_repos['cloudcv'].search_mrs.return_value = [1, 2]
+            labhub.gh_repos['cloudcv-bears'].search_mrs.return_value = []
+            labhub.gh_repos['cloudcv-utils'].search_mrs.return_value = []
             testbot.assertCommand('!pr stats 10hours',
                                   '2 PRs opened in last 10 hours\n'
                                   'The community is alive', timeout=100)
 
-            labhub.gh_repos['coala'].search_mrs.return_value = []
+            labhub.gh_repos['cloudcv'].search_mrs.return_value = []
             testbot.assertCommand('!pr stats 5hours',
                                   '0 PRs opened in last 5 hours\n'
                                   'The community is dead')
 
-            labhub.gh_repos['coala'].search_mrs.return_value = [
+            labhub.gh_repos['cloudcv'].search_mrs.return_value = [
                 1, 2, 3, 4, 5,
                 6, 7, 8, 9, 10
             ]
@@ -322,9 +322,9 @@ class TestLabHub(unittest.TestCase):
 
     def test_invite_me(self):
         teams = {
-            'coala maintainers': self.mock_team,
-            'coala newcomers': self.mock_team,
-            'coala developers': self.mock_team
+            'cloudcv maintainers': self.mock_team,
+            'cloudcv newcomers': self.mock_team,
+            'cloudcv developers': self.mock_team
         }
 
         labhub, testbot = plugin_testbot(plugins.labhub.LabHub, logging.ERROR)

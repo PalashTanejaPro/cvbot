@@ -15,18 +15,18 @@ addons:
       - python3-dev
 
 before_script:
-  - pip install coala-bears
+  - pip install cloudcv-bears
   - pip install -r requirements.txt
   - pip install -r test-requirements.txt
 
 script:
   - sed -i.bak '/bears = GitCommitBear/d' .coafile
-  - coala --non-interactive -V
+  - cloudcv --non-interactive -V
   - python -m pytest
-  - docker build -t "corobo" .
+  - docker build -t "cvbot" .
   - docker images
   - >
-    docker run --user root corobo /bin/sh -c "
+    docker run --user root cvbot /bin/sh -c "
         set -e -x
         pip install -r test-requirements.txt;
         find -name \"**.pyc\" -delete;

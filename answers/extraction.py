@@ -87,7 +87,7 @@ def parse_docs():
     """
     data = {}
     doc_folders = map(lambda x: get_abs_path(x),
-                      ['coala/docs/Developers', 'documentation/Users',
+                      ['cloudcv/docs/Developers', 'documentation/Users',
                        'documentation/Help'])
     for folder in doc_folders:
         for files in os.listdir(folder):

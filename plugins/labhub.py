@@ -270,7 +270,7 @@ class LabHub(BotPlugin):
             checks.append(function)
             return function
 
-        if self.GH_ORG_NAME == 'coala' and self.GL_ORG_NAME == 'coala':
+        if self.GH_ORG_NAME == 'cloudcv' and self.GL_ORG_NAME == 'cloudcv':
             @register_check
             def difficulty_level(user, iss):
                 """
@@ -337,9 +337,9 @@ class LabHub(BotPlugin):
     @staticmethod
     def community_state(pr_count: dict):
         if (sum(pr_count.values())):
-            if any([pr_count.get('coala-bears', 0) >= 2,
-                    pr_count.get('coala', 0) >= 5,
-                    pr_count.get('coala-utils', 0) >= 1]):
+            if any([pr_count.get('cloudcv-bears', 0) >= 2,
+                    pr_count.get('cloudcv', 0) >= 5,
+                    pr_count.get('cloudcv-utils', 0) >= 1]):
                 return 'on fire'
             else:
                 return 'alive'

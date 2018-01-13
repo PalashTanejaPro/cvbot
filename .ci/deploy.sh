@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 
-# Continuous deployment to solar.coala.io
-# This script is meant to run on solar.coala.io
+# Continuous deployment to solar.cloudcv.io
+# This script is meant to run on solar.cloudcv.io
 
 # Execute this script in a CI environment with
 # the required SSH added to the agent, with
 # this command:
-# $ ssh solar.coala.io "bash -s" < /path/to/script
+# $ ssh solar.cloudcv.io "bash -s" < /path/to/script
 
 set -e -x
 
-WORK_DIR=/opt/solar/corobo
+WORK_DIR=/opt/solar/cvbot
 
 fail() {
     echo "FAIL: $*"

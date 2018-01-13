@@ -1,8 +1,8 @@
 pip install gitpython
 
 pull_and_build() {
-    docker pull meetmangukiya/corobo-answers:latest
-    docker build -t meetmangukiya/corobo-answers answers/
+    docker pull meetmangukiya/cvbot-answers:latest
+    docker build -t meetmangukiya/cvbot-answers answers/
 }
 
 if [[ $BRANCH_NAME != "master" ]]
