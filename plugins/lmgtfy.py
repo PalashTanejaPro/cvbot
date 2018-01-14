@@ -11,8 +11,8 @@ class Lmgtfy(BotPlugin):
                re_cmd_name_help='lmgtfy <search-string>')
     def lmgtfy(self, msg, match):
         """I'm lazy, please google for me."""  # Ignore QuotesBear
-        searches = search(match.group(1), tld="com", lang="en", stop=1)
+        searches = search(match.group(1), stop=5)
         searches = [url for url in searches]
-        searches = searches[:1]
+        searches = searches[:5]
         return ('There ya go! this can be solved using a simple Google Search:\n- ' +
         '\n- '.join([url for url in searches]) )
