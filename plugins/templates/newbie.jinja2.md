@@ -6,7 +6,8 @@ Our organization is comprised of
 * Origami 
 * Fabrik (IDE)
 
-You can visit us [at](cloudcv-staging.us-west-2.elasticbeanstalk.com) 
+You can look at a brief description of our projects [here](cloudcv-staging.us-west-2.elasticbeanstalk.com)
+
 Try looking at some of our active issues and commenting on the ones that you think that you can solve!
 
-### If you are not familiar with Git then you should first read [this](https://rogerdudler.github.io/git-guide/)
+**If you are not familiar with Git then you should first read [this]**(https://rogerdudler.github.io/git-guide/)
