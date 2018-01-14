@@ -1,0 +1,12 @@
+[Core]
+name = newbie
+module = newbie
+
+[Documentation]
+description = Help the newbies!
+
+[Python]
+version = 3
+
+[Errbot]
+
