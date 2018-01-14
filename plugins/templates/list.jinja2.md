@@ -6,6 +6,8 @@ Also, here are some of my commands
 * ``cvbot wa <question string>`` gets an answer to your question!
 * ``cvbot explain <string>`` explains some basics of our org and git in general
 * ``cvbot whoami`` get some technical info about yourself
-* More commands coming soon (need admin approval)
+* ``cvbot newbie`` to get some info if you are new to the org
+* ``cvbot the rules`` my laws
+* More commands (assigning issues, shipping PRs) coming soon (just need admin approval)
 
 I hope you have a great time!
