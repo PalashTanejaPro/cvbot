@@ -8,11 +8,11 @@ class Lmgtfy(BotPlugin):
     """
 
     @re_botcmd(pattern=r'lmgtfy\s+(.+)',
-               re_cmd_name_help='lmgtfy <search-string>',
-               template='lmgtfy.jinja2')
+               re_cmd_name_help='lmgtfy <search-string>')
     def lmgtfy(self, msg, match):
         """I'm lazy, please google for me."""  # Ignore QuotesBear
         res = []
         for url in search(match.group(1), tld="com", lang="en", stop=5):
             res.append(url)
-        return {'results': res}
+        return ('There ya go! this can be solved using a simple Google Search:\n- ' +
+        '\n- '.join(res) )
