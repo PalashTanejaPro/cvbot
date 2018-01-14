@@ -12,7 +12,7 @@ class Lmgtfy(BotPlugin):
     def lmgtfy(self, msg, match):
         """I'm lazy, please google for me."""  # Ignore QuotesBear
         res = []
-        for url in search(match.group(1), tld="com", lang="en", stop=5):
+        for url in search(match.group(1), tld="com", lang="en", stop=1):
             res.append(url)
         return ('There ya go! this can be solved using a simple Google Search:\n- ' +
         '\n- '.join(res) )
