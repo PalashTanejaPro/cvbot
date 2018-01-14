@@ -1,5 +1,5 @@
 from errbot import BotPlugin, re_botcmd
-from google import search
+from googlesearch import search
 
 class Lmgtfy(BotPlugin):
     """
