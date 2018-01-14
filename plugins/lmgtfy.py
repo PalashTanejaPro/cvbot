@@ -1,5 +1,5 @@
 from errbot import BotPlugin, re_botcmd
-
+from google import search
 
 class Lmgtfy(BotPlugin):
     """
@@ -12,4 +12,7 @@ class Lmgtfy(BotPlugin):
                template='lmgtfy.jinja2')
     def lmgtfy(self, msg, match):
         """I'm lazy, please google for me."""  # Ignore QuotesBear
-        return {'query': match.group(1)}
+        res = []
+        for url in search(match.group(1), tld="com", lang="en", stop=5):
+            res.append(url)
+        return {'results': res}
