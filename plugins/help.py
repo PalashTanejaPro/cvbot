@@ -12,7 +12,7 @@ class help(BotPlugin):
                re_cmd_name_help='help',
                flags=re.IGNORECASE,
                template='help.jinja2')
-    def the_rules(self, msg, args):
+    def help(self, msg, args):
         """
         Show the bot rules.
         """
