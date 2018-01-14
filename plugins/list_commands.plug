@@ -1,0 +1,12 @@
+[Core]
+name = list_commands
+module = list_commands
+
+[Documentation]
+description = List the bot commands
+
+[Python]
+version = 3
+
+[Errbot]
+
