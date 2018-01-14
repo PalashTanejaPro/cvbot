@@ -9,7 +9,7 @@ class help(BotPlugin):
     """
 
     @re_botcmd(pattern=r'help',
-               re_cmd_name_help='help',
+               re_cmd_name_help='whoami',
                flags=re.IGNORECASE,
                template='help.jinja2')
     def help(self, msg, args):
