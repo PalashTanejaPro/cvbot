@@ -1,0 +1,11 @@
+[Core]
+name = help
+module = help
+
+[Documentation]
+description = List the bot functions
+
+[Python]
+version = 3
+
+[Errbot]
