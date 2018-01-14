@@ -5,5 +5,7 @@ Also, here are some of my commands
 * ``cvbot nm`` makes me apolgize to you :p
 * ``cvbot wa <question string>`` gets an answer to your question!
 * ``cvbot explain <string>`` explains some basics of our org and git in general
+* ``cvbot whoami`` get some technical info about yourself
+* More commands coming soon (need admin approval)
 
 I hope you have a great time!
