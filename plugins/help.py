@@ -3,7 +3,7 @@ import re
 from errbot import BotPlugin, re_botcmd
 
 
-class The_rules(BotPlugin):
+class help(BotPlugin):
     """
     List the bot rules
     """
