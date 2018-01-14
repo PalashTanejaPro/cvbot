@@ -11,3 +11,5 @@ You can look at a brief description of our projects [here](cloudcv-staging.us-we
 Try looking at some of our active issues and commenting on the ones that you think that you can solve!
 
 **If you are not familiar with Git then you should first read [this](https://rogerdudler.github.io/git-guide/)**
+
+Also, you can summon me by typing `cvbot list commands`
